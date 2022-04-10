@@ -99,7 +99,7 @@ You can either Update the exisiting record or create your own new record.
 Below I create a new admin account (using group_id 99) and give it the username of testing123 and the password of testing1234.
 
 ```
-INSERT INTO ragnarok.login (userid, user_pass, group_id) VALUES ('testing123', 'testing1234', '99')
+INSERT INTO ragnarok.login (userid, user_pass, group_id) VALUES ('testing123', 'testing1234', '99');
 ```
 
 Then we can take a look at the results.
