@@ -1,8 +1,15 @@
-CREATE DATABASE ragnarok; 
-CREATE USER ragnarok@localhost IDENTIFIED BY 'ragnarok';
-GRANT ALL PRIVILEGES ON ragnarok.* to ragnarok@localhost IDENTIFIED BY 'ragnarok';
+CREATE DATABASE ragnarok;
+
+CREATE USER ragnarok@localhost;
+
+GRANT ALL PRIVILEGES ON * . * TO ragnarok@localhost;
+
+ALTER USER ragnarok@localhost IDENTIFIED BY PASSWORD 'ragnarok';
+
 flush privileges;
+
 USE ragnarok;
+
 source /usr/bin/rathena/sql-files/main.sql;
 source /usr/bin/rathena/sql-files/logs.sql;
 source /usr/bin/rathena/sql-files/item_db.sql;
