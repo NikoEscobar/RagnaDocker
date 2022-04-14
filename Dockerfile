@@ -1,4 +1,4 @@
-       FROM ubuntu:latest 
+       FROM ubuntu:latest
  MAINTAINER Tyler Voll <tylervollbooks@gmail.com>
         ENV DEBIAN_FRONTEND noninteractive
        USER root
@@ -11,7 +11,7 @@
         ADD reset-athena.sh /
         ADD backup-athena.sh /
         ADD import-athena.sh /
-    WORKDIR /usr/bin/rathena/		
+    WORKDIR /usr/bin/rathena/
         RUN apt-get update \
          && mkdir /datastore/ \
          && mkdir /datastore/etc-apache2/ \
@@ -25,7 +25,10 @@
          && mkdir /datastoresetup/usr-bin-rathena/ \
          && mkdir /datastoresetup/var-lib-mysql/ \
          && mkdir /datastoresetup/var-www-html/ \
-         && apt-get -yqq dist-upgrade \
+         && apt-get -yqq install software-properties-common \
+         && apt-get update \
+         && apt-add-repository --yes ppa:ondrej/php \
+         && apt-get update \
          && apt-get -yqq --force-yes install apache2 \
                                              g++ \
                                              git \
